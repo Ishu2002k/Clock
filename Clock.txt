@@ -8,13 +8,18 @@ root = tk.Tk()
 root.title("Clock")
 
 def time():
+    # time format which will be displayed on the screen
     string =strftime('%h:%d:%m:%y \n %H:%M:%S %p')
+    
     label.config(text=string)
+    
     label.after(1000, time)
+    # time will be updated after every 1s
+ 
+    label = ttk.Label(root ,font =('ds-digital', 40),background='purple', foreground = 'pink')
 
-
-label = ttk.Label(root ,font =('ds-digital', 40),background='purple', foreground = 'pink')
-label.pack(anchor ='center')
+    # anchor = 'center' is used to keep the clock horizontally at the center of the page.
+    label.pack(anchor ='center')
 
 
 time()
